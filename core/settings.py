@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'transfers',
+    'transfer',
 ]
 
 MIDDLEWARE = [
@@ -59,13 +59,14 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'main.context_processors.get_countries_context'
             ],
         },
     },
@@ -120,10 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 STATIC_URL = 'static/'
 if DEBUG:
-    STATICFILES_DIRS=(BASE_DIR/ 'static',)
+    STATICFILES_DIRS=(BASE_DIR/ 'static/',)
 else:
-    STATIC_ROOT= BASE_DIR/'static'
-MEDIA_URL='/media/'
+
+    MEDIA_URL='/media/'
 MEDIA_ROOT=BASE_DIR/'media'
 
 # Default primary key field type

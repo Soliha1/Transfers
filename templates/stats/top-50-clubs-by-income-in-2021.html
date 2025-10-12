@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+      <div class="nav">
+          <h2>– TOP-50 CLUBS BY INCOME IN 2020/21 –</h2>
+          <table class="content-nav">
+            <thead>
+              <tr>
+                <td>club</td>
+                <td>
+                  income, mill. euro
+                </td>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      <div class="latest-transfers">
+        
+        <table class="top-players">
+          {% for transfer in transfers %}
+          <tr>
+            <td style="width: 150px !important;"> {{ transfer.new_club.name}}</td>
+            <td>{{ transfer.price }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        <hr>
+        <p>It is a list of top-50 clubs with the highest revenue on transfers, received in the 2020/2021 fiscal year.</p>
+      </div>
+{% endblock %}

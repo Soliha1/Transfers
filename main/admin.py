@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import  *
-from transfers.models import *
+from transfer.models import *
 
 @admin.register(Country)
 class CountryAdmin(admin.ModelAdmin):

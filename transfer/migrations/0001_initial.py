@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 ('new_club', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='import_transfers', to='main.club')),
                 ('old_club', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='export_transfers', to='main.club')),
                 ('player', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='main.player')),
-                ('season', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='transfers.season')),
+                ('season', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='transfer.season')),
             ],
         ),
     ]
